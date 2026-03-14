@@ -1,6 +1,6 @@
 # 🖐️ 3D-Printed Robotic Arm
 
-This project features a **custom 5-DOF 3D-printed robotic arm** designed for learning ROS and testing robotics algorithms. The arm is fully assembled and keyboard-controlled, with forward and inverse kinematics **calculated and planned for future implementation** to enable autonomous motion.
+This project features a **custom 6-DOF 3D-printed robotic arm** designed for learning ROS and testing robotics algorithms. The arm is fully assembled and keyboard-controlled, with forward and inverse kinematics **calculated and planned for future implementation** to enable autonomous motion.
 
 ![Robot Arm](Images/Arm_Picture.png)
 
@@ -14,4 +14,4 @@ The robotic arm is built entirely from **3D-printed components**, allowing for a
 Forward and inverse kinematics have been **calculated** to determine end-effector positions. Implementation for autonomous motion is **planned**, providing a foundation for future improvements.
 
 ### Applications
-Ideal for **learning robotics concepts**, experimenting with **motion planning**, and integrating sensors for **automated tasks**.
+Ideal for **learning robotics concepts**, experimenting with **motion planning**, integrating sensors, and developing **ROS-based control systems** for autonomous or semi-autonomous operation.
