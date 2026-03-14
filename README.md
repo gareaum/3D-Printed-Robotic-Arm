@@ -7,6 +7,8 @@ This project features a **custom 5-DOF 3D-printed robotic arm** designed for lea
 ## Key Aspects
 
 - **Design & Fabrication:** Fully 3D-printed components for lightweight, customizable construction.
-![Robot Arm CAD File](Images/CAD_Photo2.png)   
+<img src="Images/CAD_Photo2.png" alt="Robot Arm CAD File" width="500">
+
+
 - **Kinematics:** Forward and inverse kinematics implemented for accurate end-effector positioning.  
 - **Applications:** Ideal for learning robotics concepts, experimenting with motion planning, and integrating sensors for automated tasks.
