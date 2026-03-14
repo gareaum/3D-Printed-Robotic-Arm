@@ -14,4 +14,4 @@ The robotic arm is built entirely from 3D-printed components, allowing for a lig
 The arm’s forward and inverse kinematics have been modeled to determine precise end-effector locations. Implementation for autonomous operation is in progress, enabling future autonomous motion experiments.
 
 ### Applications
-Ideal for **learning robotics concepts**, experimenting with motion planning, integrating sensors, and developing ROS-based control systems for autonomous or semi-autonomous operation.
+Ideal for learning robotics concepts, experimenting with motion planning, integrating sensors, and developing ROS-based control systems for autonomous or semi-autonomous operation.
