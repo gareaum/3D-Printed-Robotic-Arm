@@ -7,7 +7,7 @@ This project features a **custom 6-DOF 3D-printed robotic arm** designed for lea
 ## Key Aspects
 
 ### Design & Fabrication: 
-<img src="Images/CAD_Photo2.png" alt="Robot Arm CAD File" width="500">
+<img src="Images/CAD_Photo2.png" alt="Robot Arm CAD File" width="300">
 The robotic arm is built entirely from **3D-printed components**, allowing for a lightweight and modular construction. This approach makes the design **customizable and easy to iterate**, enabling quick modifications to joint structures, link lengths, or end-effectors. The printed parts are robust enough for repeated use while remaining easy to assemble and maintain, providing a hands-on platform for learning and testing robotics concepts.
 
 ### Kinematics
