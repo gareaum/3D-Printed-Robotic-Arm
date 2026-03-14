@@ -8,10 +8,10 @@ This project features a **custom 6-DOF 3D-printed robotic arm** designed for lea
 
 ### Design & Fabrication: 
 <img src="Images/CAD_Photo2.png" alt="Robot Arm CAD File" width="300">
-The robotic arm is built entirely from **3D-printed components**, allowing for a lightweight and modular construction. This approach makes the design **customizable and easy to iterate**, enabling quick modifications to joint structures, link lengths, or end-effectors. The printed parts are robust enough for repeated use while remaining easy to assemble and maintain, providing a hands-on platform for learning and testing robotics concepts.
+The robotic arm is built entirely from 3D-printed components, allowing for a lightweight and modular construction. This approach makes the design **customizable and easy to iterate**, enabling quick modifications to joint structures, link lengths, or end-effectors. The printed parts are robust enough for repeated use while remaining easy to assemble and maintain, providing a hands-on platform for learning and testing robotics concepts.
 
 ### Kinematics
-Forward and inverse kinematics have been **calculated** to determine end-effector positions. Implementation for autonomous motion is **planned**, providing a foundation for future improvements.
+The arm’s forward and inverse kinematics have been modeled to determine precise end-effector locations. Implementation for autonomous operation is in progress, enabling future autonomous motion experiments.
 
 ### Applications
-Ideal for **learning robotics concepts**, experimenting with **motion planning**, integrating sensors, and developing **ROS-based control systems** for autonomous or semi-autonomous operation.
+Ideal for **learning robotics concepts**, experimenting with motion planning, integrating sensors, and developing ROS-based control systems for autonomous or semi-autonomous operation.
