@@ -2,3 +2,4 @@ Python depencies:
 numpy
 scipy
 pyyaml
+pandas
