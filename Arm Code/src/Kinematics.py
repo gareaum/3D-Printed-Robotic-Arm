@@ -1,5 +1,4 @@
 import numpy as np
-from scipy.linalg import expm
 from scipy.spatial.transform import Rotation as R
 from scipy.optimize import fsolve
 
@@ -11,27 +10,34 @@ def FK_dh(dh_params, joint_angles, link): #Calculates the forward kinematics usi
         @param  returns:       A transformation matrix representing the pose of the desired link
     """
     T = np.eye(4)
+    transforms = []
 
+    if link > len(dh_params):
+        raise ValueError("Link index exceeds Dh parameter list")
+    
     for i in range(link):
         a , alpha, d, theta = dh_params[i]
         theta += joint_angles[i]
         T = T @ get_transform_from_dh(a,alpha,d,theta)
+        transforms.append(T.copy())
 
-    return T
+    return T,transforms
 
 def get_transform_from_dh(a, alpha, d, theta): #Gets the transformation matrix T from dh parameters
     """!
-    @param      a      a milimeters
-    @param      alpha  alpha radians
-    @param      d      d milimeters
-    @param      theta  theta radians
+    Args:
+        a:  a milimeters
+    alpha:  alpha radians
+        d:  d milimeters
+    theta:  theta radians
 
-    @return     The 4x4 transformation matrix.
+    return:  
+            The 4x4 transformation matrix.
     """
     ct, st = np.cos(theta), np.sin(theta)
     ca, sa = np.cos(alpha), np.sin(alpha)
 
-    return np.matrix([
+    return np.array([
         [ct, -st * ca,  st * sa, a * ct],
         [st,  ct * ca, -ct * sa, a * st],
         [0,   sa,       ca,      d     ],
@@ -41,35 +47,41 @@ def get_transform_from_dh(a, alpha, d, theta): #Gets the transformation matrix T
 def get_euler_angles_from_T(T): #Gets the euler angles from a transformation matrix.
 
     """
-    @param      T     transformation matrix
+    Arg:
+        T:  Transformation matrix
 
-    @return     The euler angles from T.
+
+    return:    
+            The euler angles from T.
     """
-    return R.from_matrix(T[:2,:2]).as_euler('zyx', degrees = True)
+    return R.from_matrix(T[:3,:3]).as_euler('xyz', degrees = True)
 
 def get_pose_from_T(T): #Gets the pose from T.
     """
-    @param      T     transformation matrix
+    Arg:
+        T:     Transformation matrix
 
-    @return     The pose vector from T.
+    return:
+               The pose vector from T.
     """
     euler = get_euler_angles_from_T(T)
 
     x, y, z = T[:3,3]
-    roll, pitch, yaw = euler
+    phi, theta, psi = euler
 
-    return [x, y, z, roll, pitch, yaw]
+    return np.array([x, y, z, phi, theta, psi])
 
-def IK_geometric(dh_params, pose):
+###TODO###
+def IK_geometric(dh_params, pose): #Get all possible joint configs that produce the pose.
     """!
-    @brief      Get all possible joint configs that produce the pose.
+    Args:
 
-                TODO: Convert a desired end-effector pose vector as np.array to joint angles
+        dh_params:  The dh parameters
+             pose:  The desired pose vector as np.array 
 
-    @param      dh_params  The dh parameters
-    @param      pose       The desired pose vector as np.array 
-
-    @return     All four possible joint configurations in a numpy array 4x4 where each row is one possible joint
-                configuration
+    return:     
+            All four possible joint configurations in a numpy array 4x4 where each row is one possible joint
+            configuration
     """
+
     pass
